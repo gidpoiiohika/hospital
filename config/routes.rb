@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get 'pages/home'
   get 'pages/profile_doctor'
   get 'pages/profile_patient'
