@@ -4,13 +4,13 @@ class Appointment < ApplicationRecord
   belongs_to :patient
   belongs_to :doctor
 
-  validate :limit_creste, on: :create
+  validate :limit_create, on: :create
 
   scope :status_open, -> { where(status: 'open') }
 
   private
 
-  def limit_creste
+  def limit_create
     errors.add(:appointments, "Ліміт") if self.doctor.appointments.status_open.count >= 10
   end
 end
