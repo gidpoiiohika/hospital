@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recommendations
+  resources :appointments
   resources :categories
   get 'pages/home'
   get 'pages/profile_doctor'
