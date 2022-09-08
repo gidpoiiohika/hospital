@@ -14,6 +14,10 @@ class RecommendationsController < ApplicationController
 
     respond_to do |format|
       if @recommendation.save
+        appointment = Appointment.find_by(id: params["recommendation"]["appointment_id"])
+        appointment.status = 1
+        appointment.save
+        
         format.html { redirect_to appointments_path, notice: "Рекомендація була успішно створена." }
       else
         format.html { render :new, status: :unprocessable_entity }
