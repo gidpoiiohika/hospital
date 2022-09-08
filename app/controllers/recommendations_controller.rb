@@ -1,4 +1,6 @@
 class RecommendationsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @recommendations = current_patient.recommendations
   end
