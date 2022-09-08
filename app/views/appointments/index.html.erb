@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Appointments</h1>
-
-<div id="appointments">
-  <% @appointments.each do |appointment| %>
-    <%= render appointment %>
-    <p>
-      <%= link_to "Show this appointment", appointment %>
-    </p>
-  <% end %>
+<div id="<%= dom_id category %>">
+  <div class="py-8">
+    <div class="max-w-sm bg-white shadow rounded p-6">
+      <div class="flex items-center justify-between">
+        <p tabindex="0" class="focus:outline-none text-xl font-semibold leading-5 text-gray-800 pr-40"><%= category.name %></p>
+      </div> 
+      <% category.doctors.each do |doctor| %>
+        <div class="flex items-start justify-between mt-6 w-full">
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-100 rounded">
+                <%= image_tag category.avatar, :size => "100x100" %>
+            </div>
+            <div class="pl-3">
+                <p tabindex="0" class="focus:outline-none text-sm font-medium leading-normal text-gray-800">Врач: <%= doctor.full_name %></p>
+            </div>
+          </div>
+          <p tabindex="0" class="focus:outline-none text-sm font-medium leading-normal text-right text-red-700 pt-1">
+            
+            <%=  link_to "Записатися", appointments_path(appointment: {patient_id: current_patient.id, doctor_id: doctor.id}), data: { 'turbo-method' => :post } %>
+          </p>
+        </div>
+      <% end %>  
+    </div>
+  </div>
 </div>
-
-<%= link_to "New appointment", new_appointment_path %>

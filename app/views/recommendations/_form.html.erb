@@ -11,22 +11,16 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :doctor_id, style: "display: block" %>
-    <%= form.text_field :doctor_id %>
-  </div>
+  <%= form.hidden_field :patient_id, value: params["patient_id"] %>
+  <%= form.hidden_field :appointment_id, value: params["appointment_id"]  %>
+  <%= form.hidden_field :doctor_id, value: current_doctor.id  %>
 
   <div>
-    <%= form.label :patient_id, style: "display: block" %>
-    <%= form.text_field :patient_id %>
+    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Твоє повідомлення</label>
+    <%= form.text_area :title,  class: "block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Твоє повідомлення..."%>
   </div>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="mt-1">
+    <%= form.submit "Створити", class: "mb-1 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer" %>
   </div>
 <% end %>

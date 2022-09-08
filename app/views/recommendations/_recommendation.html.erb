@@ -1,17 +1,18 @@
 <div id="<%= dom_id recommendation %>">
-  <p>
-    <strong>Doctor:</strong>
-    <%= recommendation.doctor_id %>
-  </p>
-
-  <p>
-    <strong>Patient:</strong>
-    <%= recommendation.patient_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= recommendation.title %>
-  </p>
-
+  <div class="w-64 p-4  rounded border hover:shadow-lg">
+    <div class="flex justify-center items-center flex-col ">
+        <div> 
+          <img src="https://i.ibb.co/Fz9W0TV/Mask-Group.png" alt="avatar"/>
+        </div>
+        <div class="flex justify-center items-center flex-col mt-3">
+            <p class="text-sm font-medium leading-none text-gray-800">Рекомендація від врача:</p>
+            <p class="text-sm font-medium leading-none text-gray-600 mt-1"><%= recommendation.doctor.full_name %></p>
+        </div>
+    </div>
+    <div class="">
+      <p tabindex="0" class="focus:outline-none text-sm text-gray-600 dark:text-gray-400 pb-3 font-normal rounded border">
+        <%= recommendation.title %>
+      </p>
+    </div>
+  </div>
 </div>

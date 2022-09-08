@@ -1,14 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+<div id="categories" data-controller="categories">
+  <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 pt-6 gap-8">
+    <% @categories.each do |category| %>
+      <div class="rounded border-gray-300 dark:border-gray-700 border-dashed "><%= render category %></div>
+    <% end %>
+   </div> 
 </div>
-
-<%= link_to "New category", new_category_path %>
