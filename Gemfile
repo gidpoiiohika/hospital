@@ -20,7 +20,6 @@ gem 'devise'
 gem 'activeadmin'
 gem "aws-sdk-s3", require: false
 gem 'cancancan'
-gem "slim-rails"
 gem "byebug", "~> 11.1", :groups => [:development, :test]
 
 group :development, :test do
