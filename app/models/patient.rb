@@ -1,6 +1,5 @@
 class Patient < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :registerable, :recoverable, :rememberable, :validatable, :database_authenticatable, authentication_keys: [:phone_number]
 
   has_many :recommendations
   has_many :appointments

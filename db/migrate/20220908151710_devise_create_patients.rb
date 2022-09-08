@@ -7,16 +7,11 @@ class DeviseCreatePatients < ActiveRecord::Migration[7.0]
       t.string :encrypted_password, null: false, default: ""
       t.string :phone_number,       null: false, default: ""
       t.string :first_name,         null: false, default: ""
-      t.string :last_nmae,          null: false, default: ""
+      t.string :last_name,          null: false, default: ""
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
       t.datetime :remember_created_at
       t.timestamps null: false
     end
-
-    add_index :patients, :email,                unique: true
-    add_index :patients, :reset_password_token, unique: true
-    # add_index :patients, :confirmation_token,   unique: true
-    # add_index :patients, :unlock_token,         unique: true
   end
 end
