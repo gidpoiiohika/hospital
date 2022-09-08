@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'profile_doctors/home'
   get 'profile_patients/home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
