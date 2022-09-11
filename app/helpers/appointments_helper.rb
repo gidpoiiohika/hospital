@@ -2,9 +2,9 @@ module AppointmentsHelper
   def status_color(appointment)
     case appointment.status
     when 'open'
-      'text-danger'
+      "color: yellowgreen;"
     when 'closed'
-      'text-success'
+      "color: red;"
     end
   end
 end

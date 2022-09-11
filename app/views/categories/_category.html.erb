@@ -8,7 +8,7 @@
         <div class="flex items-start justify-between mt-6 w-full">
           <div class="flex items-center">
             <div class="w-8 h-8 bg-gray-100 rounded">
-                <%= image_tag category.avatar, :size => "100x100" %>
+                <%= image_tag category.image, :size => "100x100" %>
             </div>
             <div class="pl-3">
                 <p tabindex="0" class="focus:outline-none text-sm font-medium leading-normal text-gray-800">Врач: <%= doctor.full_name %></p>
@@ -16,7 +16,7 @@
           </div>
           <p tabindex="0" class="focus:outline-none text-sm font-medium leading-normal text-right text-red-700 pt-1">
             
-            <%=  link_to "Записатися", appointments_path(appointment: {patient_id: current_patient.id, doctor_id: doctor.id}), data: { 'turbo-method' => :post } %>
+            <%=  link_to "Записатися", appointments_path(appointment: {patient_id: current_patient.id, doctor_id: doctor.id}), data: { 'turbo-method' => :post } %>-
           </p>
         </div>
       <% end %>  
