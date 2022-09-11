@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  status:
+    open:   "Відкрита"
+    closed:  "Закрита"

@@ -1,0 +1,7 @@
+<div id="appointments" > 
+  <div class="flex flex-wrap items-center justify-center  gap-7 py-20 sm:px-6 px-4">
+    <% @appointments.each do |appointment| %>
+        <%= render appointment %>
+    <% end %>
+  </div>
+</div>

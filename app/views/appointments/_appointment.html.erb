@@ -1,0 +1,16 @@
+<div id="<%= dom_id appointment %>">
+    <div class="w-64 p-4  rounded border hover:shadow-lg">
+      <div class="flex justify-center items-center flex-col mb-2">
+        <div> 
+          <img src="https://i.ibb.co/Fz9W0TV/Mask-Group.png" alt="avatar"/>
+        </div>
+        <div class="flex justify-center items-center flex-col mt-3">
+          <p style="<%= status_color(appointment) %>" class="text-sm font-medium leading-none text-gray-800">Статус: <%= I18n.t :"status.#{appointment.status}" %></p>
+          <p class="text-sm font-medium leading-none text-gray-600 mt-1">Пацієнт: <%= appointment.patient.full_name %></p>
+        </div>
+      </div>
+      <div class="w-56 h-9">
+        <%= link_to 'Надати рекомендацію', new_recommendation_path(patient_id: appointment.patient&.id, appointment_id: appointment), class: 'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 flex items-center justify-center flex-1 h-full py-3 bg-gray-50 border rounded border-gray-200' %>
+      </div>
+    </div>
+</div>
