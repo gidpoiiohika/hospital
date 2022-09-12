@@ -16,7 +16,7 @@
           </div>
           <p tabindex="0" class="focus:outline-none text-sm font-medium leading-normal text-right text-red-700 pt-1">
             
-            <%=  link_to "Записатися", appointments_path(appointment: {patient_id: current_patient.id, doctor_id: doctor.id}), data: { 'turbo-method' => :post } %>-
+            <%=  link_to "Записатися", appointments_path(appointment: {patient_id: current_patient.id, doctor_id: doctor.id}), data: { 'turbo-method' => :post } %>
           </p>
         </div>
       <% end %>  
