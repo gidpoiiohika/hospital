@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :appointment do
-    doctor_id { "" }
-    patient_id { "" }
+    patient { create(:patient) }
+    doctor { create(:doctor) }
     status { 1 }
   end
 end
