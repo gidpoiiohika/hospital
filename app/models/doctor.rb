@@ -7,6 +7,8 @@ class Doctor < ApplicationRecord
   has_many :appointments
   has_many :patients, through: :appointments
 
+  validates :phone_number, presence: true
+
   def full_name
     "#{first_name} #{last_name}"
   end
