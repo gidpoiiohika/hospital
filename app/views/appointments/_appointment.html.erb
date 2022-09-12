@@ -10,7 +10,9 @@
         </div>
       </div>
       <div class="w-56 h-9">
-        <%= link_to 'Надати рекомендацію', new_recommendation_path(patient_id: appointment.patient&.id, appointment_id: appointment), class: 'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 flex items-center justify-center flex-1 h-full py-3 bg-gray-50 border rounded border-gray-200' %>
+        <% unless appointment.status == "open" %>
+          <%= link_to 'Надати рекомендацію', new_recommendation_path(patient_id: appointment.patient&.id, appointment_id: appointment), class: 'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 flex items-center justify-center flex-1 h-full py-3 bg-gray-50 border rounded border-gray-200' %>
+        <% end %> 
       </div>
     </div>
 </div>
